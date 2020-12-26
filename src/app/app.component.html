@@ -1,0 +1,52 @@
+<h1 style="text-align: center;">Values From Node</h1>
+<hr>
+<table class="table" border="2" align="center">
+    <thead>
+        <tr>
+       
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">DOB</th>
+          <th scope="col">State</th>
+          <th scope="col">City</th>
+          <th scope="col">Pincode</th>
+        </tr>
+      
+    <tr *ngFor="let ans of values_from_node">
+        
+        <td>{{ans.firstname}}</td>
+        <td>{{ans.lastname}}</td>
+        <td>{{ans.mobile}}</td>
+        <td>{{ans.email}}</td>
+        <td>{{ans.password}}</td>
+        <td>{{ans.dob}}</td>
+        <td>{{ans.state}}</td>
+        <td>{{ans.city}}</td>
+        <td>{{ans.pincode}}</td>
+        <td>
+            <button (click)="delete_data(ans._id)" class="btn_new">Delete</button>
+        </td>
+        <td>
+            <a href="/edit/{{ans._id}}" class="btn_one">Edit</a>
+        </td>
+    </tr>
+</thead>
+</table>
+
+<hr>
+<form>
+    <input type="text" #x1>&nbsp;
+    <input type="text" #x2>&nbsp;
+    <input type="text" #x3>&nbsp;
+    <input type="text" #x4>&nbsp;
+    <input type="password" #x5>&nbsp;
+    <input type="text" #x6><br><br>
+    <input type="text" #x7>&nbsp;
+    <input type="text" #x8>&nbsp;
+    <input type="text" #x9><br><br>
+    <button type="button"(click)="add_record(x1,x2,x3,x4,x5,x6,x7,x8,x9)">Send</button>
+</form>
+<router-outlet></router-outlet>
